@@ -78,12 +78,12 @@ function(params) {
       else {},
     labelsCache+:
       if std.objectHas(params, 'labelsCache')
-         && std.objectHas(params.queryRangeCache, 'type')
+         && std.objectHas(params.labelsCache, 'type')
          && params.labelsCache.type == 'memcached' then
 
         defaults.memcachedDefaults + params.labelsCache
       else if std.objectHas(params, 'labelsCache')
-              && std.objectHas(params.queryRangeCache, 'type')
+              && std.objectHas(params.labelsCache, 'type')
               && params.labelsCache.type == 'in-memory' then
 
         defaults.fifoCache + params.labelsCache
